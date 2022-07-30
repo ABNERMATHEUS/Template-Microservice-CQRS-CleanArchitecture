@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateMicroservice.Core", "TemplateMicroservice.Core\TemplateMicroservice.Core.csproj", "{E9328C94-7212-4A66-A417-24E778FF9808}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateMicroservice.Infrastructure", "TemplateMicroservice.Infrastructure\TemplateMicroservice.Infrastructure.csproj", "{230FF57D-3F04-4982-9D02-4EACE47237AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateMicroservice.Application", "TemplateMicroservice.Application\TemplateMicroservice.Application.csproj", "{8D21CB1E-E9CD-4E85-98AE-56BCDFBBDB1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateMicroservice.Api", "TemplateMicroservice.Api\TemplateMicroservice.Api.csproj", "{31D0D72E-088C-4B1C-BD7C-0A2F6AA3538E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{891AB513-4E25-473C-AEAA-879BA6582FD9}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E9328C94-7212-4A66-A417-24E778FF9808}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9328C94-7212-4A66-A417-24E778FF9808}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9328C94-7212-4A66-A417-24E778FF9808}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9328C94-7212-4A66-A417-24E778FF9808}.Release|Any CPU.Build.0 = Release|Any CPU
+		{230FF57D-3F04-4982-9D02-4EACE47237AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{230FF57D-3F04-4982-9D02-4EACE47237AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{230FF57D-3F04-4982-9D02-4EACE47237AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{230FF57D-3F04-4982-9D02-4EACE47237AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D21CB1E-E9CD-4E85-98AE-56BCDFBBDB1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D21CB1E-E9CD-4E85-98AE-56BCDFBBDB1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D21CB1E-E9CD-4E85-98AE-56BCDFBBDB1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D21CB1E-E9CD-4E85-98AE-56BCDFBBDB1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31D0D72E-088C-4B1C-BD7C-0A2F6AA3538E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31D0D72E-088C-4B1C-BD7C-0A2F6AA3538E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31D0D72E-088C-4B1C-BD7C-0A2F6AA3538E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31D0D72E-088C-4B1C-BD7C-0A2F6AA3538E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+	EndGlobalSection
+EndGlobal
