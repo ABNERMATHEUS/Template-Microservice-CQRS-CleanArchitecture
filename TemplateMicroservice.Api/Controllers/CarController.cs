@@ -1,4 +1,5 @@
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TemplateMicroservice.Api.Controllers.Bases;
 using TemplateMicroservice.Application.Commands.CommandCar;
@@ -9,8 +10,6 @@ namespace TemplateMicroservice.Api.Controllers;
 [Route("[controller]")]
 public class CarController : ControllerBaseApi
 {
-
-
     #region POST
 
     [HttpPost]
@@ -38,5 +37,4 @@ public class CarController : ControllerBaseApi
     }
 
     #endregion
-   
 }

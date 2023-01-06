@@ -12,7 +12,8 @@
 
     <ItemGroup>
       <ProjectReference Include="..\TemplateMicroservice.Application\TemplateMicroservice.Application.csproj" />      
-      <ProjectReference Include="..\TemplateMicroservice.Infrastructure\TemplateMicroservice.Infrastructure.csproj" />
+      <ProjectReference Include="..\TemplateMicroservice.Infrastructure\TemplateMicroservice.Infrastructure.csproj" />      
+      <ProjectReference Include="..\TemplateMicroservice.IoC\TemplateMicroservice.IoC.csproj" />
     </ItemGroup>
 
 </Project>

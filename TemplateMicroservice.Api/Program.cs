@@ -1,4 +1,3 @@
-using TemplateMicroservice.Application.Extesions;
 using TemplateMicroservice.Infrastructure.Extesions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,8 +9,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDependencyInjectionCore();
-builder.Services.AddDependencyInjectionInfrastructure();
+builder.Services.AddRegisterServices(builder.Configuration);
 
 var app = builder.Build();
 // Configure the HTTP request pipeline.
