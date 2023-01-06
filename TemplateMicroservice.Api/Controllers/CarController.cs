@@ -7,12 +7,13 @@ using TemplateMicroservice.Application.Queries.QueryCar;
 
 namespace TemplateMicroservice.Api.Controllers;
 
-[Route("[controller]")]
+[Route("v1/[controller]")]
 public class CarController : ControllerBaseApi
 {
     #region POST
 
     [HttpPost]
+    [Authorize]
     public async Task<IActionResult> CreateAsync(
         [FromBody] CreateCarCommand request,
         [FromServices] IMediator mediator
@@ -27,6 +28,7 @@ public class CarController : ControllerBaseApi
     #region GET
 
     [HttpGet]
+    [Authorize]
     public async Task<IActionResult> GetAsync(
         [FromQuery] GetByIdQueryCar request,
         [FromServices] IMediator mediator
