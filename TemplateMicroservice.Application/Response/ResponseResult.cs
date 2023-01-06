@@ -5,7 +5,7 @@ namespace TemplateMicroservice.Application.Response;
 
 public class ResponseResult : IResult
 {
-    public ResponseResult(bool success, string? message, HttpStatusCode statusCode, object? data = null)
+    private ResponseResult(bool success, string? message, HttpStatusCode statusCode, object? data = null)
     {
         Success = success;
         Message = message;
@@ -13,15 +13,24 @@ public class ResponseResult : IResult
         Data = data;
     }
 
-    public ResponseResult(bool success, HttpStatusCode statusCode, object? data)
+    public static ResponseResult ReturnFail(object? data = null, string? message = null)
     {
-        Success = success;
-        StatusCode = statusCode;
-        Data = data;
+        return new ResponseResult(false, message, HttpStatusCode.BadRequest, data);
+    }
+
+    public static ResponseResult ReturnError(string? message = null, object? data = null)
+    {
+        return new ResponseResult(false, message, HttpStatusCode.InternalServerError, data);
+    }
+
+    public static ResponseResult ReturnSuccess(object? data = null, string? message = null,
+        HttpStatusCode httpStatusCode = HttpStatusCode.OK)
+    {
+        return new ResponseResult(true, message, httpStatusCode, data);
     }
 
     public bool Success { get; }
     public string? Message { get; }
-    public HttpStatusCode StatusCode { get;  }
+    public HttpStatusCode StatusCode { get; }
     public object? Data { get; }
 }

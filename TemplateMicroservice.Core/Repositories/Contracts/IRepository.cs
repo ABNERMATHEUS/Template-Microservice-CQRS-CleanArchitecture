@@ -2,15 +2,15 @@ using TemplateMicroservice.Core.Entities.Bases;
 
 namespace TemplateMicroservice.Core.Repositories.Contracts;
 
-public interface IRepository <TEntity> where TEntity : BaseEntity<Guid>
+public interface IRepository<TEntity> where TEntity : BaseEntity<Guid>
 {
     IQueryable<TEntity> Get();
 
     Task CreateAsync(TEntity entity, CancellationToken cancellationToken = default);
     void Create(TEntity entity);
     void CreateArrange(IList<TEntity> entities);
-    void CreateArrangeAsync(IList<TEntity> entities, CancellationToken cancellationToken = default);
-    
+    Task CreateArrangeAsync(IList<TEntity> entities, CancellationToken cancellationToken = default);
+
     void Update(TEntity entity);
     void UpdateArrange(IList<TEntity> entities);
 
@@ -19,5 +19,4 @@ public interface IRepository <TEntity> where TEntity : BaseEntity<Guid>
 
     Task<int> SaveAsync(CancellationToken cancellationToken = default);
     void Save();
-
 }

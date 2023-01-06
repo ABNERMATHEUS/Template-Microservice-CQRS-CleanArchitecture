@@ -21,20 +21,19 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseEnti
         return _DbContext.Set<TEntity>();
     }
 
-
     #endregion
-    
+
     #region CREATE
 
     public virtual async Task CreateAsync(TEntity entity, CancellationToken cancellationToken = default)
     {
-        entity.CreatedAt = DateTime.Now;
+        entity.AddCreatedAt(DateTime.Now);
         await _DbContext.Set<TEntity>().AddAsync(entity, cancellationToken);
     }
 
     public virtual void Create(TEntity entity)
     {
-        entity.CreatedAt = DateTime.Now;
+        entity.AddCreatedAt(DateTime.Now);
         _DbContext.Set<TEntity>().Add(entity);
     }
 
@@ -42,20 +41,20 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseEnti
     {
         foreach (var entity in entities)
         {
-            entity.UpdateAt = DateTime.Now;
+            entity.AddUpdatedAt(DateTime.Now);
         }
 
         _DbContext.Set<TEntity>().AddRange(entities);
     }
 
-    public virtual void CreateArrangeAsync(IList<TEntity> entities,CancellationToken cancellationToken = default)
+    public virtual async Task CreateArrangeAsync(IList<TEntity> entities, CancellationToken cancellationToken = default)
     {
         foreach (var entity in entities)
         {
-            entity.UpdateAt = DateTime.Now;
+            entity.AddUpdatedAt(DateTime.Now);
         }
 
-        _DbContext.Set<TEntity>().AddRangeAsync(entities, cancellationToken);
+        await _DbContext.Set<TEntity>().AddRangeAsync(entities, cancellationToken);
     }
 
     #endregion
@@ -64,7 +63,7 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseEnti
 
     public virtual void Update(TEntity entity)
     {
-        entity.UpdateAt = DateTime.Now;
+        entity.AddUpdatedAt(DateTime.Now);
         _DbContext.Set<TEntity>().Update(entity);
     }
 
@@ -72,14 +71,16 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseEnti
     {
         foreach (var entity in entities)
         {
-            entity.UpdateAt = DateTime.Now;
+            entity.AddUpdatedAt(DateTime.Now);
         }
+
         _DbContext.Set<TEntity>().UpdateRange(entities);
     }
 
     #endregion
 
     #region DELETE
+
     public virtual void Delete(TEntity entity)
     {
         _DbContext.Set<TEntity>().Remove(entity);
@@ -89,19 +90,20 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseEnti
     {
         _DbContext.Set<TEntity>().RemoveRange(entities);
     }
-    
+
     #endregion
 
     #region SAVE
-    public virtual Task<int> SaveAsync( CancellationToken cancellationToken)
+
+    public virtual async Task<int> SaveAsync(CancellationToken cancellationToken)
     {
-        return _DbContext.SaveChangesAsync(cancellationToken);
+        return await _DbContext.SaveChangesAsync(cancellationToken);
     }
 
     public virtual void Save()
     {
         _DbContext.SaveChanges();
     }
-    
+
     #endregion
 }

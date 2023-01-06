@@ -9,10 +9,8 @@ using TemplateMicroservice.Core.Repositories;
 
 namespace TemplateMicroservice.Application.Handlers.HandlerCar;
 
-public class CreateCarCommandHandler :  IRequestHandler<CreateCarCommand, ResponseResult>
+public class CreateCarCommandHandler : IRequestHandler<CreateCarCommand, ResponseResult>
 {
-    
-    
     private readonly ILogger<CreateCarCommandHandler> _logger;
     private readonly ICarRepository _carRepository;
 
@@ -32,9 +30,10 @@ public class CreateCarCommandHandler :  IRequestHandler<CreateCarCommand, Respon
 
             if (!resultValidator.IsValid)
             {
-                return new ResponseResult(false, HttpStatusCode.BadRequest, resultValidator.Errors);
+                return ResponseResult.ReturnFail(resultValidator.Errors);
             }
-            var car = new Car(Guid.NewGuid(), DateTime.Now, "Abner", request.Name, request.Color, request.Model,
+
+            var car = new Car(Guid.NewGuid(), "Abner", request.Name, request.Color, request.Model,
                 EEntityStatus.ACTIVE);
 
             await _carRepository.CreateAsync(car, cancellationToken);
@@ -42,12 +41,12 @@ public class CreateCarCommandHandler :  IRequestHandler<CreateCarCommand, Respon
 
             _logger.LogInformation($"Successfully created. Process {nameof(CreateCarCommandHandler)}",
                 request);
-            return new ResponseResult(true, "Successfully created.", HttpStatusCode.Created,car.Id);
+            return ResponseResult.ReturnSuccess(car.Id, "Successfully created.", HttpStatusCode.Created);
         }
         catch (Exception ex)
         {
             _logger.LogError($"Error when process: {nameof(CreateCarCommandHandler)}", request);
-            return new ResponseResult(false, ex.Message, HttpStatusCode.InternalServerError);
+            return ResponseResult.ReturnError(ex.Message);
         }
     }
 }

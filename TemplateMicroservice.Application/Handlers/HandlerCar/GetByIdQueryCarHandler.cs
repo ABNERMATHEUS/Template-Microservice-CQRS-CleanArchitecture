@@ -7,7 +7,7 @@ using TemplateMicroservice.Core.Repositories;
 
 namespace TemplateMicroservice.Application.Handlers.HandlerCar;
 
-public class GetByIdQueryCarHandler :  IRequestHandler<GetByIdQueryCar, ResponseResult>
+public class GetByIdQueryCarHandler : IRequestHandler<GetByIdQueryCar, ResponseResult>
 {
     private readonly ILogger<GetByIdQueryCarHandler> _logger;
     private readonly ICarRepository _carRepository;
@@ -18,20 +18,19 @@ public class GetByIdQueryCarHandler :  IRequestHandler<GetByIdQueryCar, Response
         _carRepository = carRepository;
     }
 
-    public  async Task<ResponseResult> Handle(GetByIdQueryCar request, CancellationToken cancellationToken)
+    public async Task<ResponseResult> Handle(GetByIdQueryCar request, CancellationToken cancellationToken)
     {
         try
         {
-
             var validator = new GetByIdQueryCarValidation();
             var resultValidator = await validator.ValidateAsync(request, cancellationToken);
             var result = _carRepository.Get().FirstOrDefault(x => x.Id == request.Id);
-            return new ResponseResult(true, null, HttpStatusCode.OK, result);
+            return ResponseResult.ReturnSuccess(result);
         }
         catch (Exception ex)
         {
             _logger.LogError($"Error when process: {nameof(GetByIdQueryCarHandler)}");
-            return new ResponseResult(false, ex.Message, HttpStatusCode.InternalServerError);
+            return ResponseResult.ReturnError(ex.Message);
         }
     }
 }

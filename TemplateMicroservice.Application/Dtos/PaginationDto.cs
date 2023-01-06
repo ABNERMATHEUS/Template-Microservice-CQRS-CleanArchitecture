@@ -1,7 +1,7 @@
 ﻿using System;
 namespace TemplateMicroservice.Application.Dtos
 {
-    public class PaginationDto<T> 
+    public sealed class PaginationDto<T> 
     {
         public PaginationDto(int total, int page, int limit, IEnumerable<T> data)
         {
@@ -11,10 +11,10 @@ namespace TemplateMicroservice.Application.Dtos
             Data = data;
         }
 
-        public int Total { get; set; }
-        public int Page { get; set; } = 0;
-        public int Limit { get; set; }
-        public IEnumerable<T> Data { get; set; }
+        public int Total { get; private set; }
+        public int Page { get; private set; } = 0;
+        public int Limit { get; private set; }
+        public IEnumerable<T> Data { get; private set; }
     }
 }
 
