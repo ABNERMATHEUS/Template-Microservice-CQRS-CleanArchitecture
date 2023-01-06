@@ -28,13 +28,13 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseEnti
 
     public virtual async Task CreateAsync(TEntity entity, CancellationToken cancellationToken = default)
     {
-        entity.CreateAt = DateTime.Now;
+        entity.CreatedAt = DateTime.Now;
         await _DbContext.Set<TEntity>().AddAsync(entity, cancellationToken);
     }
 
     public virtual void Create(TEntity entity)
     {
-        entity.CreateAt = DateTime.Now;
+        entity.CreatedAt = DateTime.Now;
         _DbContext.Set<TEntity>().Add(entity);
     }
 

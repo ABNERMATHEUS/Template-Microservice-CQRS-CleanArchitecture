@@ -5,12 +5,16 @@ namespace TemplateMicroservice.Core.Entities;
 
 public class Car : BaseEntity<Guid>
 {
+    public Car()
+    {
+    }
+
     public Car(Guid id,
-        DateTime createAt,
+        DateTime createdAt,
         string createdBy,
         string name, string
         color, string model,
-        EEntityStatus status) : base(id, createAt, createdBy, null, null)
+        EEntityStatus status) : base(id, createdAt, createdBy, null, null)
     {
         Name = name;
         Color = color;

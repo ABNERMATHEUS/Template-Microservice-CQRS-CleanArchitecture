@@ -9,7 +9,7 @@ public abstract class ConfigurationBaseEntity<T> : IEntityTypeConfiguration<T> w
     public virtual void Configure(EntityTypeBuilder<T> builder)
     {
         builder.HasKey(x => x.Id);
-        builder.Property(x => x.CreateAt).IsRequired();
+        builder.Property(x => x.CreatedAt).IsRequired();
         builder.Property(x => x.UpdateAt);
         builder.Property(x => x.CreatedBy);
     }
