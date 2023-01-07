@@ -1,5 +1,8 @@
 
-# Template API - Microservice
+![Logo](./logo_project.png)
+
+
+# API Template - Microservice
 
 This project, was developed with purpose of help o development fast of API's using CQRS, Clean Architecture, SOLID. Also serving as guideline to good habits.
 
@@ -45,4 +48,10 @@ https://learn.microsoft.com/en-us/dotnet/core/tools/custom-templates
 https://www.luisdev.com.br/2020/09/29/clean-architecture-com-asp-net-core-parte-1/
 https://www.macoratti.net/21/01/aspnc_cleanarch3.htm
 
+
+
+## Authors
+
+- [@github-abnermatheus](https://www.github.com/abnermatheus)
+- [@linkedin-abnermatheus](https://www.linkedin.com/in/abnermatheus) 
 
