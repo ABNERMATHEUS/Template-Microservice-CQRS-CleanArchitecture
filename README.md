@@ -39,6 +39,7 @@ I used the name Product, because I wanted to create one API about context of pro
 
   - [ ]  Unit Test how example. Using XUnit and Moq to test handlers.
   - [ ]  Message producer service - ServiceBus.
+  - [ ]  Apply StyleCop
 
 
 # Reference
