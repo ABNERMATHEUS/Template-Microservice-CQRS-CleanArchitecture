@@ -20,6 +20,7 @@ This API exists um example of Create e Get of one Car Entity, only how example, 
 - MediatR
 - Swagger
 - Security JWT
+- Service Bus - Message producer service
 
 ## How install Template 
 
@@ -38,7 +39,6 @@ I used the name Product, because I wanted to create one API about context of pro
 ## Roadmap
 
   - [ ]  Unit Test how example. Using XUnit and Moq to test handlers.
-  - [ ]  Message producer service - ServiceBus.
   - [ ]  Apply StyleCop
 
 
