@@ -4,7 +4,7 @@ using TemplateMicroservice.Core.Services;
 
 namespace TemplateMicroservice.Infrastructure.Services
 {
-    public class MessageProducerService : IMessageProducerService
+    public sealed class MessageProducerService : IMessageProducerService
     {
         private readonly ServiceBusClient _serviceBusClient;
 

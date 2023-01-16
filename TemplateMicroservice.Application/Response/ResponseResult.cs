@@ -3,7 +3,7 @@ using TemplateMicroservice.Application.Response.Contracts;
 
 namespace TemplateMicroservice.Application.Response;
 
-public class ResponseResult : IResult
+public sealed class ResponseResult : IResult
 {
     private ResponseResult(bool success, string? message, HttpStatusCode statusCode, object? data = null)
     {

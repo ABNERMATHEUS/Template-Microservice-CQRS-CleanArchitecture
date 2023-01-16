@@ -9,7 +9,7 @@ using TemplateMicroservice.Core.Repositories;
 
 namespace TemplateMicroservice.Application.Handlers.HandlerCar;
 
-public class CreateCarCommandHandler : IRequestHandler<CreateCarCommand, ResponseResult>
+public sealed class CreateCarCommandHandler : IRequestHandler<CreateCarCommand, ResponseResult>
 {
     private readonly ILogger<CreateCarCommandHandler> _logger;
     private readonly ICarRepository _carRepository;

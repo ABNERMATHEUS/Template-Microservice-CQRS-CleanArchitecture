@@ -8,7 +8,7 @@ using TemplateMicroservice.Application.Queries.QueryCar;
 namespace TemplateMicroservice.Api.Controllers;
 
 [Route("v1/[controller]")]
-public class CarController : ControllerBaseApi
+public sealed class CarController : ControllerBaseApi
 {
     #region POST
 

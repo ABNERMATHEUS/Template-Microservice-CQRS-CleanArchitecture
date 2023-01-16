@@ -6,7 +6,7 @@ using TemplateMicroservice.Core.Repositories;
 
 namespace TemplateMicroservice.Application.Handlers.HandlerCar;
 
-public class GetByIdQueryCarHandler : IRequestHandler<GetByIdQueryCar, ResponseResult>
+public sealed class GetByIdQueryCarHandler : IRequestHandler<GetByIdQueryCar, ResponseResult>
 {
     private readonly ILogger<GetByIdQueryCarHandler> _logger;
     private readonly ICarRepository _carRepository;

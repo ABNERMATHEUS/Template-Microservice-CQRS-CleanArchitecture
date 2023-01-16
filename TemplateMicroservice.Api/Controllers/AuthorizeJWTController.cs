@@ -6,7 +6,7 @@ using TemplateMicroservice.Core.Services;
 namespace TemplateMicroservice.Api.Controllers;
 
 [Route("v1/[controller]")]
-public class AuthorizeJWTController : ControllerBaseApi
+public sealed class AuthorizeJWTController : ControllerBaseApi
 {
     #region GET
 

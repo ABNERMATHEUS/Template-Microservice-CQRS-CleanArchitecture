@@ -4,14 +4,14 @@ using TemplateMicroservice.Application.Response;
 
 namespace TemplateMicroservice.Application.Commands.CommandCar;
 
-public class CreateCarCommand : IRequest<ResponseResult>
+public sealed class CreateCarCommand : IRequest<ResponseResult>
 {
     public string Name { get; set; }
     public string Color { get; set; }
     public string Model { get; set; }
 }
 
-public class CreateCarCommandValidation : AbstractValidator<CreateCarCommand>
+public sealed class CreateCarCommandValidation : AbstractValidator<CreateCarCommand>
 {
     public CreateCarCommandValidation()
     {
