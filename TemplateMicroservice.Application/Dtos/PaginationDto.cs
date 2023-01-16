@@ -1,7 +1,6 @@
-﻿using System;
-namespace TemplateMicroservice.Application.Dtos
+﻿namespace TemplateMicroservice.Application.Dtos
 {
-    public sealed class PaginationDto<T> 
+    public sealed class PaginationDto<T>
     {
         public PaginationDto(int total, int page, int limit, IEnumerable<T> data)
         {

@@ -1,6 +1,6 @@
-using System.Net;
 using MediatR;
 using Microsoft.Extensions.Logging;
+using System.Net;
 using TemplateMicroservice.Application.Commands.CommandCar;
 using TemplateMicroservice.Application.Response;
 using TemplateMicroservice.Core.Entities;

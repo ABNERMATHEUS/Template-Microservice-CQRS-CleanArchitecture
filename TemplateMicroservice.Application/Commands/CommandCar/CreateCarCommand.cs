@@ -11,7 +11,8 @@ public class CreateCarCommand : IRequest<ResponseResult>
     public string Model { get; set; }
 }
 
-public class CreateCarCommandValidation : AbstractValidator<CreateCarCommand> {
+public class CreateCarCommandValidation : AbstractValidator<CreateCarCommand>
+{
     public CreateCarCommandValidation()
     {
         RuleFor(x => x.Color).NotNull();

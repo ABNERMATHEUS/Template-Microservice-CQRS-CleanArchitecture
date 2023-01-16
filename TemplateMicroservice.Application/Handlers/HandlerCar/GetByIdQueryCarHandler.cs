@@ -1,4 +1,3 @@
-using System.Net;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using TemplateMicroservice.Application.Queries.QueryCar;

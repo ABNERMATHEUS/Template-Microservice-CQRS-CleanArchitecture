@@ -1,4 +1,3 @@
-using System.Text;
 using Azure.Messaging.ServiceBus;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -6,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using System.Text;
 using TemplateMicroservice.Application.Commands.CommandCar;
 using TemplateMicroservice.Core.Repositories;
 using TemplateMicroservice.Core.Repositories.Contracts;

@@ -4,9 +4,9 @@ namespace TemplateMicroservice.Application.Response.Contracts;
 
 public interface IResult
 {
-    public bool Success { get;}
+    public bool Success { get; }
     public string? Message { get; }
-    
-    public HttpStatusCode StatusCode { get;  }
-    public object Data { get;  }
+
+    public HttpStatusCode StatusCode { get; }
+    public object Data { get; }
 }

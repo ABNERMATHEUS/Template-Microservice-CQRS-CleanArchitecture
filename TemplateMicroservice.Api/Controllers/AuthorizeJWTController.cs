@@ -21,7 +21,7 @@ public class AuthorizeJWTController : ControllerBaseApi
     [HttpGet("GetToken")]
     public IActionResult GetToken([FromServices] ITokenService tokenService)
     {
-        return Ok(new {token = tokenService.GenerateAccessTokenAsync(Guid.NewGuid(), "admin")});
+        return Ok(new { token = tokenService.GenerateAccessTokenAsync(Guid.NewGuid(), "admin") });
     }
 
     #endregion

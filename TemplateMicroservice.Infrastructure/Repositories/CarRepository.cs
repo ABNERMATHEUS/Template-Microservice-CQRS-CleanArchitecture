@@ -1,4 +1,3 @@
-using Microsoft.EntityFrameworkCore;
 using TemplateMicroservice.Core.Entities;
 using TemplateMicroservice.Core.Repositories;
 using TemplateMicroservice.Infrastructure.Context;

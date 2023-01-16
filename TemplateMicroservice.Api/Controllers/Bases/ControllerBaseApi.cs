@@ -1,5 +1,5 @@
-using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 using IResult = TemplateMicroservice.Application.Response.Contracts.IResult;
 
 namespace TemplateMicroservice.Api.Controllers.Bases;
@@ -9,7 +9,7 @@ public abstract class ControllerBaseApi : ControllerBase
 {
     internal IActionResult Return(IResult result)
     {
-        return StatusCode((int) result.StatusCode, result);
+        return StatusCode((int)result.StatusCode, result);
     }
 
     internal Guid GetIdUser()

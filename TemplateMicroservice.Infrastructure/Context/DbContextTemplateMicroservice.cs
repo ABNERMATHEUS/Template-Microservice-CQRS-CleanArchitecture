@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using TemplateMicroservice.Core.Entities;
 using TemplateMicroservice.Infrastructure.Configuration;
-using TemplateMicroservice.Infrastructure.Configuration.Bases;
 
 namespace TemplateMicroservice.Infrastructure.Context;
 
