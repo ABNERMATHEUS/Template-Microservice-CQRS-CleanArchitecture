@@ -1,4 +1,5 @@
 using System.Text;
+using Azure.Messaging.ServiceBus;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -23,17 +24,21 @@ public static class DependencyInjection
         AddConfigurationSecurity(services, configuration);
         AddDependencyInjectionCore(services);
         AddDependencyInjectionInfrastructure(services, configuration);
-        
+
     }
 
     private static void AddDependencyInjectionInfrastructure(IServiceCollection services,
         IConfiguration configuration)
     {
-        services.AddDbContext<DbContextTemplateMicroservice>(x =>
-            x.UseInMemoryDatabase(nameof(DbContextTemplateMicroservice)));
+        services.AddDbContext<DbContextTemplateMicroservice>(x => x.UseInMemoryDatabase(nameof(DbContextTemplateMicroservice)));
+
         services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
         services.AddScoped<ICarRepository, CarRepository>();
-        
+
+
+        services.AddSingleton(new ServiceBusClient(configuration.GetConnectionString("DefaultConnectionServiceBus")));
+
+        services.AddScoped<IMessageProducerService, MessageProducerService>();
         services.AddScoped<ITokenService, TokenService>();
     }
 
@@ -64,4 +69,5 @@ public static class DependencyInjection
                 };
             });
     }
+
 }
