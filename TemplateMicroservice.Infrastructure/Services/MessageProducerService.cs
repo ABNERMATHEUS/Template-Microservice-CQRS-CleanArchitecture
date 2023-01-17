@@ -1,6 +1,6 @@
 ﻿using Azure.Messaging.ServiceBus;
 using System.Text.Json;
-using TemplateMicroservice.Core.Services;
+using TemplateMicroservice.Domain.Services;
 
 namespace TemplateMicroservice.Infrastructure.Services
 {

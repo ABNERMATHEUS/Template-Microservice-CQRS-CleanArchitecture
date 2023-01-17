@@ -1,7 +1,7 @@
-using TemplateMicroservice.Core.Entities.Bases;
-using TemplateMicroservice.Core.Enums;
+using TemplateMicroservice.Domain.Entities.Bases;
+using TemplateMicroservice.Domain.Enums;
 
-namespace TemplateMicroservice.Core.Entities;
+namespace TemplateMicroservice.Domain.Entities;
 
 public sealed class Car : BaseEntity<Guid>
 {

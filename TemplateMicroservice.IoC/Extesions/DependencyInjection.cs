@@ -6,16 +6,16 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using TemplateMicroservice.Application.Commands.CommandCar;
-using TemplateMicroservice.Core.Repositories;
-using TemplateMicroservice.Core.Repositories.Contracts;
-using TemplateMicroservice.Core.Services;
+using TemplateMicroservice.Application.Commands.CreateCar;
+using TemplateMicroservice.Domain.Repositories;
+using TemplateMicroservice.Domain.Repositories.Contracts;
+using TemplateMicroservice.Domain.Services;
 using TemplateMicroservice.Infrastructure.Context;
 using TemplateMicroservice.Infrastructure.Repositories;
 using TemplateMicroservice.Infrastructure.Repositories.Bases;
 using TemplateMicroservice.Infrastructure.Services;
 
-namespace TemplateMicroservice.Infrastructure.Extesions;
+namespace TemplateMicroservice.IoC.Extesions;
 
 public static class DependencyInjection
 {

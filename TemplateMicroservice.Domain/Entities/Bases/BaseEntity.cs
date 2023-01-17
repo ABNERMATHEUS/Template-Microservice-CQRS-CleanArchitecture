@@ -1,4 +1,4 @@
-namespace TemplateMicroservice.Core.Entities.Bases;
+namespace TemplateMicroservice.Domain.Entities.Bases;
 
 public abstract class BaseEntity<T>
 {

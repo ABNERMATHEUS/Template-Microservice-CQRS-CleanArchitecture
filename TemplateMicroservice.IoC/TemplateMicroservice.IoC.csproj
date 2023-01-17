@@ -13,6 +13,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\TemplateMicroservice.Application\TemplateMicroservice.Application.csproj" />
+      <ProjectReference Include="..\TemplateMicroservice.Domain\TemplateMicroservice.Domain.csproj" />
       <ProjectReference Include="..\TemplateMicroservice.Infrastructure\TemplateMicroservice.Infrastructure.csproj" />
     </ItemGroup>
 

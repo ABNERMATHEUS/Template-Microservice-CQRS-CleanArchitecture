@@ -1,6 +1,6 @@
-using TemplateMicroservice.Core.Entities.Bases;
+using TemplateMicroservice.Domain.Entities.Bases;
 
-namespace TemplateMicroservice.Core.Repositories.Contracts;
+namespace TemplateMicroservice.Domain.Repositories.Contracts;
 
 public interface IRepository<TEntity> where TEntity : BaseEntity<Guid>
 {

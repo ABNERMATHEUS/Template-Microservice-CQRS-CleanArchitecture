@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using TemplateMicroservice.Core.Entities;
-using TemplateMicroservice.Core.Enums;
+using TemplateMicroservice.Domain.Entities;
+using TemplateMicroservice.Domain.Enums;
 using TemplateMicroservice.Infrastructure.Configuration.Bases;
 
 namespace TemplateMicroservice.Infrastructure.Configuration;

@@ -1,4 +1,4 @@
-namespace TemplateMicroservice.Core.Services;
+namespace TemplateMicroservice.Domain.Services;
 
 public interface ITokenService
 {

@@ -1,5 +1,5 @@
-using TemplateMicroservice.Core.Entities.Bases;
-using TemplateMicroservice.Core.Repositories.Contracts;
+using TemplateMicroservice.Domain.Entities.Bases;
+using TemplateMicroservice.Domain.Repositories.Contracts;
 using TemplateMicroservice.Infrastructure.Context;
 
 namespace TemplateMicroservice.Infrastructure.Repositories.Bases;

@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using TemplateMicroservice.Core.Entities.Bases;
+using TemplateMicroservice.Domain.Entities.Bases;
 
 namespace TemplateMicroservice.Infrastructure.Configuration.Bases;
 
@@ -9,8 +9,11 @@ public abstract class ConfigurationBaseEntity<T> : IEntityTypeConfiguration<T> w
     public virtual void Configure(EntityTypeBuilder<T> builder)
     {
         builder.HasKey(x => x.Id);
+
         builder.Property(x => x.CreatedAt).IsRequired();
         builder.Property(x => x.UpdateAt);
-        builder.Property(x => x.CreatedBy);
+        builder.Property(x => x.CreatedBy).HasMaxLength(128);
+        builder.Property(x => x.UpdatedBy).HasMaxLength(128);
+
     }
 }

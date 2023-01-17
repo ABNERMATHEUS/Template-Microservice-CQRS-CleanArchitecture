@@ -1,5 +1,5 @@
 using Microsoft.OpenApi.Models;
-using TemplateMicroservice.Infrastructure.Extesions;
+using TemplateMicroservice.IoC.Extesions;
 
 var builder = WebApplication.CreateBuilder(args);
 

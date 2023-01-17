@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TemplateMicroservice.Api.Controllers.Bases;
-using TemplateMicroservice.Core.Services;
+using TemplateMicroservice.Domain.Services;
 
 namespace TemplateMicroservice.Api.Controllers;
 

@@ -1,10 +1,9 @@
 using MediatR;
 using Microsoft.Extensions.Logging;
-using TemplateMicroservice.Application.Queries.QueryCar;
 using TemplateMicroservice.Application.Response;
-using TemplateMicroservice.Core.Repositories;
+using TemplateMicroservice.Domain.Repositories;
 
-namespace TemplateMicroservice.Application.Handlers.HandlerCar;
+namespace TemplateMicroservice.Application.Queries.GetByIdCar;
 
 public sealed class GetByIdQueryCarHandler : IRequestHandler<GetByIdQueryCar, ResponseResult>
 {
@@ -21,9 +20,9 @@ public sealed class GetByIdQueryCarHandler : IRequestHandler<GetByIdQueryCar, Re
     {
         try
         {
-            var validator = new GetByIdQueryCarValidation();
+            var validator = new GetByIdQueryCarValidator();
             var resultValidator = await validator.ValidateAsync(request, cancellationToken);
-            var result = _carRepository.Get().FirstOrDefault(x => x.Id == request.Id);
+            var result = _carRepository.GetByIdAsync(request.Id);
             return ResponseResult.ReturnSuccess(result);
         }
         catch (Exception ex)

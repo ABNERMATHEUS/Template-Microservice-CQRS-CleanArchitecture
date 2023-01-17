@@ -1,4 +1,4 @@
-namespace TemplateMicroservice.Core.Enums;
+namespace TemplateMicroservice.Domain.Enums;
 
 public enum EEntityStatus
 {

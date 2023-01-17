@@ -3,7 +3,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using TemplateMicroservice.Core.Services;
+using TemplateMicroservice.Domain.Services;
 
 namespace TemplateMicroservice.Infrastructure.Services;
 

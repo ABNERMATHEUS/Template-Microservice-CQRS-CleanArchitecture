@@ -2,8 +2,8 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TemplateMicroservice.Api.Controllers.Bases;
-using TemplateMicroservice.Application.Commands.CommandCar;
-using TemplateMicroservice.Application.Queries.QueryCar;
+using TemplateMicroservice.Application.Commands.CreateCar;
+using TemplateMicroservice.Application.Queries.GetByIdCar;
 
 namespace TemplateMicroservice.Api.Controllers;
 

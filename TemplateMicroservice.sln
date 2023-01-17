@@ -1,20 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateMicroservice.Core", "TemplateMicroservice.Core\TemplateMicroservice.Core.csproj", "{E9328C94-7212-4A66-A417-24E778FF9808}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.33130.402
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateMicroservice.Infrastructure", "TemplateMicroservice.Infrastructure\TemplateMicroservice.Infrastructure.csproj", "{230FF57D-3F04-4982-9D02-4EACE47237AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateMicroservice.Infrastructure", "TemplateMicroservice.Infrastructure\TemplateMicroservice.Infrastructure.csproj", "{230FF57D-3F04-4982-9D02-4EACE47237AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateMicroservice.Application", "TemplateMicroservice.Application\TemplateMicroservice.Application.csproj", "{8D21CB1E-E9CD-4E85-98AE-56BCDFBBDB1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateMicroservice.Application", "TemplateMicroservice.Application\TemplateMicroservice.Application.csproj", "{8D21CB1E-E9CD-4E85-98AE-56BCDFBBDB1E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateMicroservice.Api", "TemplateMicroservice.Api\TemplateMicroservice.Api.csproj", "{31D0D72E-088C-4B1C-BD7C-0A2F6AA3538E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateMicroservice.Api", "TemplateMicroservice.Api\TemplateMicroservice.Api.csproj", "{31D0D72E-088C-4B1C-BD7C-0A2F6AA3538E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{891AB513-4E25-473C-AEAA-879BA6582FD9}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateMicroservice.IoC", "TemplateMicroservice.IoC\TemplateMicroservice.IoC.csproj", "{31D1CF78-BF99-4DD8-88F8-70AE34B4717A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateMicroservice.IoC", "TemplateMicroservice.IoC\TemplateMicroservice.IoC.csproj", "{31D1CF78-BF99-4DD8-88F8-70AE34B4717A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateMicroservice.Domain", "TemplateMicroservice.Domain\TemplateMicroservice.Domain.csproj", "{2EF87F69-D7FD-4F69-AE0E-C17FA6B759AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,10 +24,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E9328C94-7212-4A66-A417-24E778FF9808}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E9328C94-7212-4A66-A417-24E778FF9808}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E9328C94-7212-4A66-A417-24E778FF9808}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E9328C94-7212-4A66-A417-24E778FF9808}.Release|Any CPU.Build.0 = Release|Any CPU
 		{230FF57D-3F04-4982-9D02-4EACE47237AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{230FF57D-3F04-4982-9D02-4EACE47237AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{230FF57D-3F04-4982-9D02-4EACE47237AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -42,7 +40,15 @@ Global
 		{31D1CF78-BF99-4DD8-88F8-70AE34B4717A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31D1CF78-BF99-4DD8-88F8-70AE34B4717A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31D1CF78-BF99-4DD8-88F8-70AE34B4717A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EF87F69-D7FD-4F69-AE0E-C17FA6B759AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EF87F69-D7FD-4F69-AE0E-C17FA6B759AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EF87F69-D7FD-4F69-AE0E-C17FA6B759AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EF87F69-D7FD-4F69-AE0E-C17FA6B759AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B95D789B-7D9C-4DD3-B66A-E602EC6597D6}
 	EndGlobalSection
 EndGlobal

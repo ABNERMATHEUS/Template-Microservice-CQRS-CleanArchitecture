@@ -1,13 +1,12 @@
 using MediatR;
 using Microsoft.Extensions.Logging;
 using System.Net;
-using TemplateMicroservice.Application.Commands.CommandCar;
 using TemplateMicroservice.Application.Response;
-using TemplateMicroservice.Core.Entities;
-using TemplateMicroservice.Core.Enums;
-using TemplateMicroservice.Core.Repositories;
+using TemplateMicroservice.Domain.Entities;
+using TemplateMicroservice.Domain.Enums;
+using TemplateMicroservice.Domain.Repositories;
 
-namespace TemplateMicroservice.Application.Handlers.HandlerCar;
+namespace TemplateMicroservice.Application.Commands.CreateCar;
 
 public sealed class CreateCarCommandHandler : IRequestHandler<CreateCarCommand, ResponseResult>
 {
@@ -25,7 +24,7 @@ public sealed class CreateCarCommandHandler : IRequestHandler<CreateCarCommand, 
     {
         try
         {
-            var validator = new CreateCarCommandValidation();
+            var validator = new CreateCarCommandValidator();
             var resultValidator = await validator.ValidateAsync(request, cancellationToken);
 
             if (!resultValidator.IsValid)

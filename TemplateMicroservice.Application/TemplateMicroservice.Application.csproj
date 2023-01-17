@@ -14,7 +14,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\TemplateMicroservice.Core\TemplateMicroservice.Core.csproj" />
+      <ProjectReference Include="..\TemplateMicroservice.Domain\TemplateMicroservice.Domain.csproj" />
     </ItemGroup>
 
     <ItemGroup>
