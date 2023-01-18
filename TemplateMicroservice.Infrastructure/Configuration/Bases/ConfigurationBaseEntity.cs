@@ -11,7 +11,7 @@ public abstract class ConfigurationBaseEntity<T> : IEntityTypeConfiguration<T> w
         builder.HasKey(x => x.Id);
 
         builder.Property(x => x.CreatedAt).IsRequired();
-        builder.Property(x => x.UpdateAt);
+        builder.Property(x => x.UpdatedAt);
         builder.Property(x => x.CreatedBy).HasMaxLength(128);
         builder.Property(x => x.UpdatedBy).HasMaxLength(128);
 
