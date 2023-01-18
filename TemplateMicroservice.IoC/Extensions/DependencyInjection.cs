@@ -1,3 +1,4 @@
+using AutoMapper;
 using Azure.Messaging.ServiceBus;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -14,6 +15,7 @@ using TemplateMicroservice.Infrastructure.Context;
 using TemplateMicroservice.Infrastructure.Repositories;
 using TemplateMicroservice.Infrastructure.Repositories.Bases;
 using TemplateMicroservice.Infrastructure.Services;
+using TemplateMicroservice.IoC.Profiles;
 
 namespace TemplateMicroservice.IoC.Extesions;
 
@@ -24,7 +26,7 @@ public static class DependencyInjection
         AddConfigurationSecurity(services, configuration);
         AddDependencyInjectionCore(services);
         AddDependencyInjectionInfrastructure(services, configuration);
-
+        AddMapper(services);
     }
 
     private static void AddDependencyInjectionInfrastructure(IServiceCollection services,
@@ -46,6 +48,16 @@ public static class DependencyInjection
     {
         //Inject Dependency to all command - generic
         services.AddMediatR(typeof(CreateCarCommand));
+    }
+
+    private static void AddMapper(IServiceCollection services)
+    {
+        var configuration = new MapperConfiguration(cfg =>
+        {
+            cfg.AddProfile<CarProfile>();
+        });
+        var mapper = configuration.CreateMapper();
+        services.AddSingleton(mapper);
     }
 
     private static void AddConfigurationSecurity(IServiceCollection services, IConfiguration configuration)

@@ -17,14 +17,14 @@ public abstract class BaseEntity<T>
     {
         Id = id;
         CreatedAt = createAt;
-        UpdateAt = updateAt;
+        UpdatedAt = updateAt;
         CreatedBy = createdBy;
         UpdatedBy = updatedBy;
     }
 
     public T Id { get; set; }
     public DateTime CreatedAt { get; private set; }
-    public DateTime? UpdateAt { get; private set; }
+    public DateTime? UpdatedAt { get; private set; }
     public string CreatedBy { get; private set; }
     public string? UpdatedBy { get; }
 
@@ -35,6 +35,6 @@ public abstract class BaseEntity<T>
 
     public void AddUpdatedAt(DateTime dateTime)
     {
-        UpdateAt = dateTime;
+        UpdatedAt = dateTime;
     }
 }

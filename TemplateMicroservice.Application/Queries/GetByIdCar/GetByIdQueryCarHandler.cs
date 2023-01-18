@@ -1,5 +1,7 @@
+using AutoMapper;
 using MediatR;
 using Microsoft.Extensions.Logging;
+using TemplateMicroservice.Application.Dtos;
 using TemplateMicroservice.Application.Response;
 using TemplateMicroservice.Domain.Repositories;
 
@@ -9,11 +11,13 @@ public sealed class GetByIdQueryCarHandler : IRequestHandler<GetByIdQueryCar, Re
 {
     private readonly ILogger<GetByIdQueryCarHandler> _logger;
     private readonly ICarRepository _carRepository;
+    private readonly IMapper _mapper;
 
-    public GetByIdQueryCarHandler(ILogger<GetByIdQueryCarHandler> logger, ICarRepository carRepository)
+    public GetByIdQueryCarHandler(ILogger<GetByIdQueryCarHandler> logger, ICarRepository carRepository, IMapper mapper)
     {
         _logger = logger;
         _carRepository = carRepository;
+        _mapper=mapper;
     }
 
     public async Task<ResponseResult> Handle(GetByIdQueryCar request, CancellationToken cancellationToken)
@@ -23,7 +27,8 @@ public sealed class GetByIdQueryCarHandler : IRequestHandler<GetByIdQueryCar, Re
             var validator = new GetByIdQueryCarValidator();
             var resultValidator = await validator.ValidateAsync(request, cancellationToken);
             var result = _carRepository.GetByIdAsync(request.Id);
-            return ResponseResult.ReturnSuccess(result);
+            var carDto = _mapper.Map<CarDto>(result);
+            return ResponseResult.ReturnSuccess(carDto);
         }
         catch (Exception ex)
         {
