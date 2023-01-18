@@ -26,7 +26,7 @@ public sealed class GetByIdQueryCarHandler : IRequestHandler<GetByIdQueryCar, Re
         {
             var validator = new GetByIdQueryCarValidator();
             var resultValidator = await validator.ValidateAsync(request, cancellationToken);
-            var result = _carRepository.GetByIdAsync(request.Id);
+            var result = await _carRepository.GetByIdAsync(request.Id);
             var carDto = _mapper.Map<CarDto>(result);
             return ResponseResult.ReturnSuccess(carDto);
         }

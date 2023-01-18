@@ -2,6 +2,6 @@
 
 namespace TemplateMicroservice.Application.Dtos
 {
-    public record CarDto(string Name, string Color, string Model, EEntityStatus Status);
+    public sealed record CarDto(string Name, string Color, string Model, EEntityStatus Status);
 
 }

@@ -8,7 +8,7 @@ namespace TemplateMicroservice.IoC.Profiles
     {
         public CarProfile()
         {
-            CreateMap<Car, CarDto>().ReverseMap();                
+            CreateMap<Car, CarDto>();                
         }
     }
 }
