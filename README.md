@@ -44,6 +44,7 @@ I used the name Product, because I wanted to create one API about context of pro
   - [ ]  Add ProblemsDetails
   - [ ]  SignalR
   - [ ]  Delete and Put - Method Http
+  - [ ]  BulkInsert
 
 
 # Reference
