@@ -43,6 +43,7 @@ I used the name Product, because I wanted to create one API about context of pro
   - [ ]  Apply StyleCop  
   - [ ]  Add ProblemsDetails
   - [ ]  SignalR
+  - [ ]  Delete and Put - Method Http
 
 
 # Reference
