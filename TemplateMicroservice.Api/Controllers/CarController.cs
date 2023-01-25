@@ -1,7 +1,9 @@
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using TemplateMicroservice.Api.Controllers.Bases;
+using TemplateMicroservice.Api.Hubs;
 using TemplateMicroservice.Application.Commands.CreateCar;
 using TemplateMicroservice.Application.Queries.GetByIdCar;
 
@@ -16,10 +18,16 @@ public sealed class CarController : ControllerBaseApi
     [Authorize]
     public async Task<IActionResult> CreateAsync(
         [FromBody] CreateCarCommand request,
-        [FromServices] IMediator mediator
+        [FromServices] IMediator mediator,
+        [FromServices] IHubContext<NotificationHub> _hubContextNotification
     )
     {
         var result = await mediator.Send(request);
+        if (result.Success)
+        {
+            await _hubContextNotification.Clients.All.SendAsync("Notify", "Created new car");
+
+        }
         return base.Return(result);
     }
 

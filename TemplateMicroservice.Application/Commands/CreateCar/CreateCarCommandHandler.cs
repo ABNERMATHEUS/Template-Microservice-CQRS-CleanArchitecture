@@ -11,7 +11,7 @@ namespace TemplateMicroservice.Application.Commands.CreateCar;
 public sealed class CreateCarCommandHandler : IRequestHandler<CreateCarCommand, ResponseResult>
 {
     private readonly ILogger<CreateCarCommandHandler> _logger;
-    private readonly ICarRepository _carRepository;
+    private readonly ICarRepository _carRepository;    
 
     public CreateCarCommandHandler(ILogger<CreateCarCommandHandler> logger, ICarRepository carRepository)
     {
@@ -37,7 +37,7 @@ public sealed class CreateCarCommandHandler : IRequestHandler<CreateCarCommand, 
 
             await _carRepository.CreateAsync(car, cancellationToken);
             await _carRepository.SaveAsync(cancellationToken);
-
+            
             _logger.LogInformation($"Successfully created. Process {nameof(CreateCarCommandHandler)}",
                 request);
             return ResponseResult.ReturnSuccess(car.Id, "Successfully created.", HttpStatusCode.Created);

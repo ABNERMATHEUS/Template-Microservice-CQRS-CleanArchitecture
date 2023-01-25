@@ -1,5 +1,6 @@
 using Microsoft.OpenApi.Models;
 using TemplateMicroservice.IoC.Extesions;
+using TemplateMicroservice.Api.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,8 +10,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddSignalR();
 
 builder.Services.AddRegisterServices(builder.Configuration);
+builder.Services.AddScoped<NotificationHub>();
 builder.Services.AddSwaggerGen(c =>
 {
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
@@ -53,5 +56,5 @@ app.UseAuthentication(); // UseAuthentication must always stay is up of UseAutho
 app.UseAuthorization();
 
 app.MapControllers();
-
+app.MapHub<NotificationHub>("/notificationHub");
 app.Run();
