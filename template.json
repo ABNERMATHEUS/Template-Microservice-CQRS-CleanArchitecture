@@ -1,14 +1,16 @@
 ﻿{
     "$schema": "http://json.schemastore.org/template",
-    "author": "Abner Matheus",
+    "author": "abnermatheus",
     "classifications": [ "webapi" ],
-    "identity": "API.CQRS.CleanArchitecture",
-    "groupIdentity": "Template.NET",
-    "name": "Web API - CQRS with Clean Architecture",
-    "shortName": "webapi_cqrs_clean_architecture",
-    "sourceName": "TemplateMicroservice",
+    "description": "",
+    "name": "API - CQRS with Clean Architecture",
+    "identity": "Template.TemplateMicroservice.CQRS.CleanArchitecture",
+    "groupIdentity": "Template.Microservice",
     "tags": {
         "language": "C#",
-        "type": "project"
-    }
+        "type": "project",
+        "vsmac-category": "other/net/general"
+    },
+    "shortName": "webapi_cqrs_clean_architecture",
+    "sourceName": "TemplateMicroservice"
 }
