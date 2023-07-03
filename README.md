@@ -22,6 +22,7 @@ This API exists um example of Create e Get of one Car Entity, only how example, 
 - Security JWT
 - Service Bus - Message producer service
 - AutoMapper
+- Bulk - Insert, Delete and Update
 
 ## How install Template 
 
@@ -43,9 +44,6 @@ I used the name Product, because I wanted to create one API about context of pro
   - [ ]  Apply StyleCop  
   - [ ]  Add ProblemsDetails
   - [ ]  SignalR
-  - [ ]  Delete and Put - Method Http
-  - [ ]  BulkInsert
-
 
 # Reference
 
