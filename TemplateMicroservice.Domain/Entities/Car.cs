@@ -28,4 +28,12 @@ public sealed class Car : BaseEntity<Guid>
     public string Model { get; private set; }
 
     public EEntityStatus Status { get; private set; }
+
+    public void Update(string color, string model, string name)
+    {
+        Color = color;
+        Model = model;
+        Name = name;
+        AddUpdatedAt(DateTime.Now);
+    }
 }

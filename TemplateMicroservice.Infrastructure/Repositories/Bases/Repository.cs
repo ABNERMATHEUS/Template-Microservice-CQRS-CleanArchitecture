@@ -1,3 +1,5 @@
+using EFCore.BulkExtensions;
+using Microsoft.EntityFrameworkCore;
 using TemplateMicroservice.Domain.Entities.Bases;
 using TemplateMicroservice.Domain.Repositories.Contracts;
 using TemplateMicroservice.Infrastructure.Context;
@@ -6,12 +8,12 @@ namespace TemplateMicroservice.Infrastructure.Repositories.Bases;
 
 public class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseEntity<Guid>
 {
-    protected Repository(DbContextTemplateMicroservice dbContext)
+    public Repository(DbContextTemplateMicroservice dbContext)
     {
         _DbContext = dbContext;
     }
 
-    private DbContextTemplateMicroservice _DbContext { get; set; }
+    protected DbContextTemplateMicroservice _DbContext { get; set; }
 
 
     #region READ
@@ -95,7 +97,7 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseEnti
 
     #region SAVE
 
-    public virtual async Task<int> SaveAsync(CancellationToken cancellationToken)
+    public virtual async Task<int> SaveAsync(CancellationToken cancellationToken = default)
     {
         return await _DbContext.SaveChangesAsync(cancellationToken);
     }
@@ -103,6 +105,26 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseEnti
     public virtual void Save()
     {
         _DbContext.SaveChanges();
+    }
+
+    public async Task<TEntity?> GetByIdAsync(Guid Id, CancellationToken cancellationToken = default)
+    {
+        return await Get().FirstOrDefaultAsync(x=> x.Id == Id, cancellationToken);
+    }
+
+    public async Task BulkInsertAsync(IList<TEntity> entities, CancellationToken cancellationToken = default)
+    {
+        await _DbContext.BulkInsertAsync(entities, cancellationToken:cancellationToken);
+    }
+
+    public async Task BulkDeleteAsync(IList<TEntity> entities, CancellationToken cancellationToken = default)
+    {
+        await _DbContext.BulkDeleteAsync(entities, cancellationToken:cancellationToken);
+    }
+
+    public async Task BulkUpdateAsync(IList<TEntity> entities, CancellationToken cancellationToken = default)
+    {
+        await _DbContext.BulkUpdateAsync(entities, cancellationToken: cancellationToken);
     }
 
     #endregion
