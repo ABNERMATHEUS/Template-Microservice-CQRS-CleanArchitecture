@@ -44,6 +44,8 @@ I used the name Product, because I wanted to create one API about context of pro
   - [ ]  Apply StyleCop  
   - [ ]  Add ProblemsDetails
   - [ ]  SignalR
+  - [ ]  Send Email by Azure
+  - [ ]  Upload photo by Azure
 
 # Reference
 
