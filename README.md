@@ -28,7 +28,7 @@ This API exists um example of Create e Get of one Car Entity, only how example, 
 
 Root file TemplateMicroservice, type it. Then the template will be installed on your computer.
 ```powershell
-dotnet install ./
+dotnet new install ./
 ```
 Then just use the template.
 
