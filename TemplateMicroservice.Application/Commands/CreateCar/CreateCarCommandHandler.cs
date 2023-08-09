@@ -33,7 +33,7 @@ public sealed class CreateCarCommandHandler : IRequestHandler<CreateCarCommand, 
             }
 
             var car = new Car(Guid.NewGuid(), "Abner", request.Name, request.Color, request.Model,
-                EEntityStatus.ACTIVE);
+                EEntityStatus.ACTIVE, request.Year);
 
             await _carRepository.CreateAsync(car, cancellationToken);
             await _carRepository.SaveAsync(cancellationToken);

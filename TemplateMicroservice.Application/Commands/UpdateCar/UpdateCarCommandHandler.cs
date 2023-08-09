@@ -24,7 +24,7 @@ public class UpdateCarCommandHandler : IRequestHandler<UpdateCarCommand, Respons
                 return ResponseResult.ReturnFail(message: "Dont found.");
             }
 
-            car.Update(request.Color, request.Model, request.Name);
+            car.Update(request.Color, request.Model, request.Name, request.Year);
 
             _repositoryCar.Update(car);
             await _repositoryCar.SaveAsync(cancellationToken);

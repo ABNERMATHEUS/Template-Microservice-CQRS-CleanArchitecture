@@ -80,6 +80,14 @@ public static class DependencyInjection
                     ValidateAudience = false
                 };
             });
+
+        //Azure AD
+        //services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+        //         .AddJwtBearer(options =>
+        //         {
+        //             options.Authority = $"https://login.microsoftonline.com/{configuration.GetSection("AzureAd:TenantId").Value}/v2.0";
+        //             options.Audience = configuration.GetSection("AzureAd:ClientId").Value;
+        //         });
     }
 
 }

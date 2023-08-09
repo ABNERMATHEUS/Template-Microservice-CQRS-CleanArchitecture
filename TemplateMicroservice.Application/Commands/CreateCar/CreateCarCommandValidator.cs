@@ -9,6 +9,7 @@ namespace TemplateMicroservice.Application.Commands.CreateCar
             RuleFor(x => x.Color).NotNull();
             RuleFor(x => x.Model).NotNull();
             RuleFor(x => x.Name).NotNull();
+            RuleFor(x => x.Year).NotNull();
         }
     }
 }
