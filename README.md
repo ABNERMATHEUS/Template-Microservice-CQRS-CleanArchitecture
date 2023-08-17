@@ -23,12 +23,13 @@ This API exists um example of Create e Get of one Car Entity, only how example, 
 - Service Bus - Message producer service
 - AutoMapper
 - Bulk - Insert, Delete and Update
+- Upload photo by Azure blob
 
 ## How install Template 
 
 Root file TemplateMicroservice, type it. Then the template will be installed on your computer.
 ```powershell
-dotnet install ./
+dotnet new install ./
 ```
 Then just use the template.
 
@@ -45,7 +46,6 @@ I used the name Product, because I wanted to create one API about context of pro
   - [ ]  Add ProblemsDetails
   - [ ]  SignalR
   - [ ]  Send Email by Azure
-  - [ ]  Upload photo by Azure
 
 # Reference
 
