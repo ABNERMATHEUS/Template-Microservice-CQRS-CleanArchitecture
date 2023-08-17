@@ -42,6 +42,7 @@ public static class DependencyInjection
 
         services.AddScoped<IMessageProducerService, MessageProducerService>();
         services.AddScoped<ITokenService, TokenService>();
+        services.AddScoped<IImageService, ImageService>();
     }
 
     private static void AddDependencyInjectionCore(IServiceCollection services)
