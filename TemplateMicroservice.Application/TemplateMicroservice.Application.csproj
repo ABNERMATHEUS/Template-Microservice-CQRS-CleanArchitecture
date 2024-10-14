@@ -1,30 +1,25 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
-    <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-    </PropertyGroup>
-
-    <ItemGroup>
-      <PackageReference Include="AutoMapper" Version="12.0.1" />
-      <PackageReference Include="FluentValidation" Version="10.4.0" />
-      <PackageReference Include="MediatR" Version="10.0.1" />
-      <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
-      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\TemplateMicroservice.Domain\TemplateMicroservice.Domain.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
-        <HintPath>..\..\..\..\..\..\..\..\..\usr\local\share\dotnet\shared\Microsoft.AspNetCore.App\6.0.2\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
-      </Reference>
-    </ItemGroup>
-
-    <ItemGroup>
-      <None Remove="Dtos\" />
-    </ItemGroup>
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="FluentValidation" Version="10.4.0" />
+    <PackageReference Include="MediatR" Version="10.0.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TemplateMicroservice.Domain\TemplateMicroservice.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
+      <HintPath>..\..\..\..\..\..\..\..\..\usr\local\share\dotnet\shared\Microsoft.AspNetCore.App\6.0.2\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Dtos\" />
+  </ItemGroup>
 </Project>

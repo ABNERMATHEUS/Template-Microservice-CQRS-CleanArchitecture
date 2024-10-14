@@ -1,20 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
-
-    <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
-        <Nullable>enable</Nullable>
-        <ImplicitUsings>enable</ImplicitUsings>
-    </PropertyGroup>
-
-    <ItemGroup>
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\TemplateMicroservice.Application\TemplateMicroservice.Application.csproj" />
-      <ProjectReference Include="..\TemplateMicroservice.Domain\TemplateMicroservice.Domain.csproj" />      
-      <ProjectReference Include="..\TemplateMicroservice.Infrastructure\TemplateMicroservice.Infrastructure.csproj" />      
-      <ProjectReference Include="..\TemplateMicroservice.IoC\TemplateMicroservice.IoC.csproj" />
-    </ItemGroup>
-
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TemplateMicroservice.Application\TemplateMicroservice.Application.csproj" />
+    <ProjectReference Include="..\TemplateMicroservice.Domain\TemplateMicroservice.Domain.csproj" />
+    <ProjectReference Include="..\TemplateMicroservice.Infrastructure\TemplateMicroservice.Infrastructure.csproj" />
+    <ProjectReference Include="..\TemplateMicroservice.IoC\TemplateMicroservice.IoC.csproj" />
+  </ItemGroup>
 </Project>
